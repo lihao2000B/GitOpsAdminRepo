@@ -1,0 +1,37 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: user
+  name: gitops-demo
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: user
+  name: user
+  namespace: gitops-demo
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    toolkit.fluxcd.io/tenant: user
+  name: user-reconciler
+  namespace: gitops-demo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: gotk:gitops-demo:reconciler
+- kind: ServiceAccount
+  name: user
+  namespace: gitops-demo
+
