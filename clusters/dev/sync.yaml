@@ -7,7 +7,7 @@ spec:
   interval: 1m0s
   ref:
     branch: main
-  url: git@github.com:lihao2000B/GitOpsAdminRepo.git
+  url: ssh://git@github.com:lihao2000B/GitOpsAdminRepo.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
