@@ -6,6 +6,7 @@ metadata:
   namespace: gitops-demo
 spec:
   interval: 1m0s
+  serviceAccountName: user
   ref:
     branch: main
   url: https://github.com/lihao2000B/GitOpsUserRepo.git
