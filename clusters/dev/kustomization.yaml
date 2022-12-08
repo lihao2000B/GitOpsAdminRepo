@@ -3,3 +3,11 @@ kind: Kustomization
 resources:
 - sync.yaml
 - tanants.yaml
+patches:
+  - patch: |
+      - op: add
+        path: /spec/template/spec/containers/0/args/0
+        value: --no-cross-namespace-refs=true
+    target:
+      kind: Deployment
+      name: kustomize-controller
