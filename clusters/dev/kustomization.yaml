@@ -10,4 +10,4 @@ patches:
         value: --no-cross-namespace-refs=true
     target:
       kind: Deployment
-      name: kustomize-controller
+      name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
