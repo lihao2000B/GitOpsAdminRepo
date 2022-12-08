@@ -8,5 +8,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-sync
+  serviceAccountName: user
   path: ./tenants
   prune: true
