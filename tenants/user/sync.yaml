@@ -20,7 +20,7 @@ spec:
   interval: 1m0s
   path: ./
   prune: true
-  serviceAccountName: default
+  serviceAccountName: user
   sourceRef:
     kind: GitRepository
     name: user
