@@ -8,18 +8,21 @@ patches:
   - patch: |
       - op: remove
         path: /spec/template/spec/containers/0/args/0
+        value: --no-cross-namespace-refs=true
     target:
       kind: Deployment
       name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
   - patch: |
       - op: remove
         path: /spec/template/spec/containers/0/args/0
+        value: --default-service-account=default
     target:
       kind: Deployment
       name: "(kustomize-controller|helm-controller)"
   - patch: |
       - op: remove
         path: /spec/serviceAccountName
+        value: kustomize-controller
     target:
       kind: Kustomization
       name: "flux-system"
