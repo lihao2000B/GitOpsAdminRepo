@@ -6,7 +6,7 @@ resources:
 
 patches:
   - patch: |
-      - op: remove
+      - op: add
         path: /spec/serviceAccountName
         value: kustomize-controller
     target:
