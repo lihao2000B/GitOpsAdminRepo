@@ -4,3 +4,22 @@ resources:
 - sync.yaml
 - tanants.yaml
 
+patches:
+  - patch: |
+      - op: remove
+        path: /spec/template/spec/containers/0/args/0
+    target:
+      kind: Deployment
+      name: "(kustomize-controller|helm-controller|notification-controller|image-reflector-controller|image-automation-controller)"
+  - patch: |
+      - op: remove
+        path: /spec/template/spec/containers/0/args/0
+    target:
+      kind: Deployment
+      name: "(kustomize-controller|helm-controller)"
+  - patch: |
+      - op: remove
+        path: /spec/serviceAccountName
+    target:
+      kind: Kustomization
+      name: "flux-system"
