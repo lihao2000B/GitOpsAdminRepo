@@ -7,7 +7,6 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    namespace: gitops-demo
     name: flux-sync
   path: ./tenants
   prune: true
