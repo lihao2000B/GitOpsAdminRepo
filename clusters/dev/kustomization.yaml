@@ -3,12 +3,3 @@ kind: Kustomization
 resources:
 - sync.yaml
 - tanants.yaml
-
-patches:
-  - patch: |
-      - op: add
-        path: /spec/serviceAccountName
-        value: kustomize-controller
-    target:
-      kind: Kustomization
-      name: "flux-sync"
