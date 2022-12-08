@@ -21,4 +21,5 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
+    namespace: gitops-demo
     name: flux-sync
