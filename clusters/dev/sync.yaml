@@ -19,7 +19,6 @@ spec:
   interval: 1m0s
   path: ./clusters/dev
   prune: true
-  serviceAccountName: user
   sourceRef:
     kind: GitRepository
     name: flux-sync
